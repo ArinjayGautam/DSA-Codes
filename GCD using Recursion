@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class GCD {
+    static int Gcd1(int a, int b){
+        if(b == 0){
+            return a;
+        }
+    return Gcd1(b , a%b);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter integer 1 for GCD:");
+        int x = sc.nextInt();
+        System.out.print("Enter integer 2 for GCD:");
+        int y = sc.nextInt();
+        System.out.println(Gcd1(x,y));
+    }
+}
