@@ -1,0 +1,14 @@
+class KNAPSACK1 {
+
+
+    static int knapSack(int W, int wt[], int v[], int n)
+    {
+        if (n == 0 || W == 0)
+            return 0;
+
+        if (wt[n - 1] > W)
+            return knapSack(W, wt, v, n - 1);
+        else
+            return Math.max(knapSack(W, wt, v, n - 1), 
+             v[n - 1] + knapSack(W - wt[n-1], wt, v, n-1));
+    }
